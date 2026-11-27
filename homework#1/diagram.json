@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "Sarah Imran",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": -80,
+      "left": 200,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -20,
+      "left": 150,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "yellow",
+      "top": 80,
+      "left": 200,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 140,
+      "left": 150,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:18", "r1:1", "green", [] ],
+    [ "r1:2", "red:A", "green", [] ],
+    [ "red:C", "esp:GND.1", "black", [] ],
+    [ "esp:19", "r2:1", "green", [] ],
+    [ "r2:2", "yellow:A", "green", [] ],
+    [ "yellow:C", "esp:GND.1", "black", [] ]
+  ]
+}
